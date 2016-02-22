@@ -1,0 +1,107 @@
+﻿<Window x:Class="BDOA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="0" Width="0" WindowStyle="None" Deactivated="MainWindow_OnDeactivated" AllowsTransparency="True" Loaded="MainWindow_OnLoaded"  Name="Mw" Background="#00000000" Closing="MainWindow_OnClosing"  Topmost="True">
+    <Grid Name="Mg">
+
+        <Grid Name="Gmax" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="52" Margin="961,414,0,0">
+            <Image x:Name="Imgmax" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="52" />
+            <Ellipse Name="Emax" Fill="#ffee2222" HorizontalAlignment="Left" Height="10" Margin="37,10,0,0" VerticalAlignment="Top" Width="10"/>
+        </Grid>
+        <Grid Name="Gsp" HorizontalAlignment="Left" Height="30" Margin="82,270,0,0" VerticalAlignment="Top" Width="72">
+            <Image x:Name="Imgsp" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="72" Margin="0,0,0,0" />
+            <Label Foreground="#ffcccccc" x:Name="Lbsp" Content="10" HorizontalAlignment="Left" Margin="24,0,0,0" VerticalAlignment="Top" Height="30" Width="24" FontSize="15" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        </Grid>
+        <Grid Visibility="Hidden" Name="Tt1" HorizontalAlignment="Left" Height="73" Margin="82,270,0,0" VerticalAlignment="Top" Width="196">
+            <Rectangle Fill="#cc000000" RadiusY="7" RadiusX="7"/>
+            <Label Content="Включение или отключение&#xD;&#xA;покупки максимального&#xD;&#xA;количества предметов" FontSize="13" Padding ="0" Foreground ="#ffcbcbcb" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10"/>
+        </Grid>
+        <Grid Visibility="Hidden" x:Name="Tt2" HorizontalAlignment="Left" Height="45" Margin="150,399,0,0" VerticalAlignment="Top" Width="200">
+            <Rectangle Fill="#cc000000" RadiusY="7" RadiusX="7"/>
+            <Label Content="Понижение скорости покупки" FontSize="13" Padding ="0" Foreground ="#ffcbcbcb" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10"/>
+        </Grid>
+        <Grid Visibility="Hidden" x:Name="Tt3" HorizontalAlignment="Left" Height="45" Margin="283,240,0,0" VerticalAlignment="Top" Width="204">
+            <Rectangle Fill="#cc000000" RadiusY="7" RadiusX="7"/>
+            <Label Content="Повышение скорости покупки" FontSize="13" Padding ="0" Foreground ="#ffcbcbcb" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10"/>
+        </Grid>
+        <Label x:Name="label" Content="" HorizontalAlignment="Left" Height="50" Margin="108,102,-208,-202" VerticalAlignment="Top" Width="500" Foreground="Red" FontSize="30"/>
+        <Grid Name="TaskBoard" HorizontalAlignment="Left" Height="688" Margin="-416,-156,0,-532" VerticalAlignment="Top" Width="300">
+            <Rectangle Fill="#cc2b2f2b" RadiusY="7" RadiusX="7" Stroke="#c8646464" StrokeThickness="1"/>
+            <Rectangle Fill="#55000000" RadiusY="7" RadiusX="7" Margin="9,44,9,10"/>
+            <Rectangle Fill="#55000000" RadiusY="7" RadiusX="7" Margin="18,175,18,71"/>
+            <Rectangle Name="RFiltres" Fill="#55000000" RadiusY="7" RadiusX="7" Margin="19,54,19,0" Height="50" VerticalAlignment="Top"/>
+            <Grid Name="Items" Margin="27,175,27,71" Background="#00000000" ClipToBounds="True"/>
+            <Image x:Name="IResume" Height="40" Margin="130,58,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40"/>
+            <Image x:Name="IDResume" Height="40" Margin="85,58,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40"/>
+            <Image x:Name="IStop" Height="40" Margin="175,58,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40"/>
+            <Image x:Name="IStartBack" Height="40" Margin="27,58,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40"/>
+            <Image x:Name="IDela" Margin="0,627,28,21" HorizontalAlignment="Right" Width="40"/>
+            <Label Content="Кол-во предметов:" Margin="19,627,102,0" VerticalAlignment="Top" Height="41" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="#ffBFA186"/>
+            <Label x:Name="LItemsCount" Content="0" Margin="0,627,68,0" VerticalAlignment="Top" Height="41" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15"  Foreground="#ffBFA186" HorizontalAlignment="Right" Width="34"/>
+            <Image x:Name="IAddUn" Height="40" Margin="0,58,28,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="40"/>
+            <Grid Name="GTitle" HorizontalAlignment="Left" Height="42" Margin="88,2,0,0" VerticalAlignment="Top" Width="127">
+                <Label Width="94" Padding="0" Content="Автоскупка - " HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="#ffBFA186">
+                    <Label.Effect>
+                        <DropShadowEffect ShadowDepth="1" Direction="320" Color="Black" BlurRadius="0"/>
+                    </Label.Effect>
+                </Label>
+                <Label Padding="0" x:Name="LABSS" Content="[Вкл]" Margin="94,0,-9,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="#cc22cc22" Height="42" VerticalAlignment="Top" HorizontalAlignment="Left" Width="42"/>
+            </Grid>
+
+        </Grid>
+        <Label Name="BDOAL" Content="- BDOA " HorizontalAlignment="Left" Margin="-726,-197,0,0" VerticalAlignment="Top" Height="41" Width="60" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="#ffBFA186">
+            <Label.Effect>
+                <DropShadowEffect ShadowDepth="1" Direction="320" Color="Black" BlurRadius="0">
+
+                </DropShadowEffect>
+            </Label.Effect>
+        </Label>
+
+        <Label Padding="0" Name="LABS" Content="[Вкл]" Margin="-666,-198,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="#cc22cc22" Height="41" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Grid x:Name="Tt4" HorizontalAlignment="Left" Height="79" Margin="222,221,-426,-300" VerticalAlignment="Top" Width="204" Visibility="Hidden">
+            <Rectangle Fill="#cc000000" RadiusY="7" RadiusX="7"/>
+            <Label Content="Удалить купленный предмет&#xA;из списка и продолжить&#xA;автоскупку" FontSize="13" Padding ="0" Foreground ="#ffcbcbcb" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10"/>
+        </Grid>
+        <Grid x:Name="Tt7" HorizontalAlignment="Left" Height="58" Margin="222,403,-381,-461" VerticalAlignment="Top" Width="159" Visibility="Hidden">
+            <Rectangle Fill="#cc000000" RadiusY="7" RadiusX="7"/>
+            <Label Content="Удалить все предметы&#xD;&#xA;из списка" FontSize="13" Padding ="0" Foreground ="#ffcbcbcb" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10"/>
+        </Grid>
+        <Grid x:Name="Tt5" HorizontalAlignment="Left" Height="98" Margin="222,305,-426,-403" VerticalAlignment="Top" Width="204" Visibility="Hidden">
+            <Rectangle Fill="#cc000000" RadiusY="7" RadiusX="7"/>
+            <Label Content="Продолжить покупки&#xD;&#xA;(Неограниченная скупка&#xD;&#xA;всех предметов из списка&#xD;&#xA;на все имеющееся серебро)" FontSize="13" Padding ="0" Foreground ="#ffcbcbcb" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10"/>
+        </Grid>
+        <Grid x:Name="Tt6" HorizontalAlignment="Left" Height="90" Margin="222,354,-401,-444" VerticalAlignment="Top" Width="179" Visibility="Hidden">
+            <Rectangle Fill="#cc000000" RadiusY="7" RadiusX="7"/>
+            <Label Content="Закончить покупки&#xD;&#xA;(После покупки любого&#xD;&#xA;предмета из списка&#xD;&#xA;Автоскупка выключается)" FontSize="13" Padding ="0" Foreground ="#ffcbcbcb" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10"/>
+        </Grid>
+        <Grid x:Name="Tt8" HorizontalAlignment="Left" Height="147" Margin="222,354,-508,-501" VerticalAlignment="Top" Width="286" Visibility="Hidden">
+            <Rectangle Fill="#cc000000" RadiusY="7" RadiusX="7"/>
+            <Label Content="Автоматическая скупка любого предмета,&#xD;&#xA;появившегося в списке аукциона&#xD;&#xA;(активируйте эту функцию и выберите&#xD;&#xA;категорию необходимых предметов,&#xD;&#xA;или в поиске введите итем,&#xD;&#xA;ранее не выставлявшийся на аукционе)" FontSize="13" Padding ="0" Foreground ="#ffcbcbcb" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10"/>
+        </Grid>
+        <!--<Grid x:Name="TaskBoard_Copy" HorizontalAlignment="Left" Height="688" Margin="-98,-156,-202,-532" VerticalAlignment="Top" Width="185">
+            <Rectangle Fill="#cc2b2f2b" RadiusY="7" RadiusX="7" Stroke="#c8646464" StrokeThickness="1"/>
+            <Rectangle Fill="#55000000" RadiusY="7" RadiusX="7" Margin="9,44,9,10"/>
+            <Rectangle Fill="#55000000" RadiusY="7" RadiusX="7" Margin="18,175,18,71"/>
+            <Rectangle Fill="#55000000" RadiusY="7" RadiusX="7" Margin="19,54,19,0" Height="100" VerticalAlignment="Top"/>
+            <Grid x:Name="Items1" Margin="27,175,27,71" Background="#00000000" ClipToBounds="True"/>
+            <Image x:Name="IResume1" Height="40" Margin="72,103,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40"/>
+            <Image x:Name="IDResume1" Height="40" Margin="27,103,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40"/>
+            <Image x:Name="IStop1" Height="40" Margin="117,103,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40"/>
+            <Image x:Name="IStartBack1" Height="40" Margin="27,58,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40"/>
+            <Image x:Name="IDela1" Margin="117,628,28,20"/>
+            <Label Content="Кол-во:" HorizontalAlignment="Left" Margin="19,627,0,0" VerticalAlignment="Top" Height="41" Width="63" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="#ffBFA186"/>
+            <Label x:Name="LItemsCount1" Content="0" Margin="82,627,0,0" VerticalAlignment="Top" Height="41" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15"  Foreground="#ffBFA186" HorizontalAlignment="Left" Width="34"/>
+            <Image x:Name="IAddUn1" Height="40" Margin="117,58,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40"/>
+            <Label Padding="0" Content="Автоскупка - " Margin="27,0,0,0" VerticalAlignment="Top" Height="44" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="#ffBFA186" HorizontalAlignment="Left" Width="94">
+                <Label.Effect>
+                    <DropShadowEffect ShadowDepth="1" Direction="320" Color="Black" BlurRadius="0"/>
+                </Label.Effect>
+            </Label>
+            <Label Padding="0" x:Name="LABSS1" Content="[Вкл]" Margin="121,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" Foreground="#cc22cc22" Height="44" VerticalAlignment="Top" HorizontalAlignment="Left" Width="33"/>
+
+        </Grid>-->
+    </Grid>
+</Window>
